@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body class="bg-[#65BABF1A]">
+    <nav class="w-full bg-white fixed h-16 flex items-center">
+      <div class="container mx-auto flex items-center justify-between px-4'">
+        <div class="logo h-9">
+          <img
+            src="./img/Mask group.png"
+            alt=""
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <ul class="lg:flex w-1/2 justify-between hidden text-slate-600">
+          <li>
+            <a class="font-semibold" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="font-semibold" href="about.html">About Us</a>
+          </li>
+          <li>
+            <a class="font-semibold" href="partner.html">Partner</a>
+          </li>
+          <li>
+            <a class="font-semibold" href="service.html">Services</a>
+          </li>
+          <li>
+            <a class="font-semibold" href="gallery.html">Gallery</a>
+          </li>
+          <li>
+            <a class="font-semibold" href="info.html">Info</a>
+          </li>
+          <li>
+            <a class="font-semibold" href="">Contact</a>
+          </li>
+        </ul>
+        <div
+          onclick="openLogin()"
+          class="w-[170px] h-10 bg-[#018491] hover:bg-[#0f737c] text-white rounded-full lg:flex items-center justify-center text-xs font-semibold text-center hidden md:hidden cursor-pointer"
+        >
+          <button>Masuk / Daftar</button>
+        </div>
+        <button
+          onclick="openNavbar()"
+          class="togle h-16 flex items-center pr-4 lg:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h6 w-6 fill-[#02546480] cursor-pointer"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M224,128a8,8, 0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    
+
+    <aside
+      class="w-full h-screen bg-white bg-opacity-90 fixed z-30 lg:hidden transition-all duration-200 ease-in-out -translate-x-full"
+    >
+      <div
+        class="h-full content backdrop-blur flex items-center justify-center"
+      >
+        <button onclick="closeNavbar()" class="absolute top-3 right-2 z-[99]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="fill-[#018491] w-10 h-10"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+            ></path>
+          </svg>
+        </button>
+        <ul class="flex flex-col gap-2 text-center">
+          <li>
+            <a class="text-base text-[#018491] font-semibold" href="#">Home</a>
+          </li>
+          <li>
+            <a class="text-base text-[#018491] font-semibold" href="about.html"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-base text-[#018491] font-semibold"
+              href="partner.html"
+              >Partner</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-base text-[#018491] font-semibold"
+              href="service.html"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-base text-[#018491] font-semibold"
+              href="gallery.html"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a class="text-base text-[#018491] font-semibold" href="info.html"
+              >Info</a
+            >
+          </li>
+          <li>
+            <a class="text-base text-[#018491] font-semibold" href=""
+              >Contact</a
+            >
+          </li>
+          <li>
+            <div
+              onclick="openLogin(),closeNavbar()"
+              class="text-sm rounded-xl bg-[#018491] flex items-center justify-center px-3 py-2 text-white"
+            >
+              <button>Masuk / Daftar</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <!-- LOGIN START -->
+    <section
+      class="login z-50 w-full h-full bg-black bg-opacity-50 fixed translate-x-full transition-all duration-200 ease-in-out"
+    >
+      <div
+        class="container h-full md:h-fit lg:w-[820px] mx-auto px-4 py-1 flex flex-col md:flex-row md:mt-16 lg:justify-evenly bg-white md:rounded-xl md:py-9 relative"
+      >
+        <div
+          onclick="closeLogin()"
+          class="absolute right-1 top-1 cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="#000000"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+            ></path>
+          </svg>
+        </div>
+        <div
+          class="w-[180px] h-[196px] md:w-[300px] md:h-[360px] lg:w-[380px] lg:h-[396px] mt-3 md:mt-1 mx-auto bg-gray-300 p-4 rounded-xl lg:m-0"
+        >
+          <img src="img/Enter OTP-amico 2.png" alt="" class="w-full h-full" />
+        </div>
+        <div class="h-full md:w-[295px] mt-3">
+          <div class="md:flex md:flex-col">
+            <h3 class="text-lg font-bold text-slate-400">Sign In</h3>
+            <label for="" class="flex flex-col gap-2 mt-4">
+              <span class="text-sm text-black">Email Adress</span>
+              <input
+                id="email"
+                type="email"
+                class="rounded-full p-2 border border-black bg-white h-[35px]"
+              />
+              <span class="text-sm text-black mt-2">Password</span>
+              <input
+                id="password"
+                type="password"
+                class="rounded-full p-2 h-[35px] border border-black bg-white"
+              />
+              <span
+                class="text-right text-slate-400 hover:text-[#3de1f0] text-xs font-semibold cursor-pointer"
+                >Lupa Password</span
+              >
+            </label>
+          </div>
+          <div class="flex flex-col mt-6 gap-3">
+            <div
+              class="w-full h-[35px] bg-sky-600 hover:bg-sky-700 rounded-full flex justify-center cursor-pointer"
+            >
+              <button class="text-center text-sm font-semibold text-white">
+                Sign In
+              </button>
+            </div>
+            <div
+              onclick="closeLogin(),openAccount()"
+              class="w-full h-[35px] border border-black bg-white text-black hover:bg-slate-300 rounded-full flex justify-center cursor-pointer"
+            >
+              <button class="text-center text-sm font-semibold">
+                Create New Account
+              </button>
+            </div>
+            <div
+              class="w-full h-[35px] border border-black bg-white hover:bg-slate-300 rounded-full flex justify-center cursor-pointer"
+            >
+              <button
+                class="text-center text-sm font-semibold text-black flex items-center"
+              >
+                <span class="mr-3 w-5"
+                  ><img src="img/flat-color-icons_google.png" alt="" /></span
+                >Masuk / Daftar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- LOGIN END -->
+
+    <!-- NEW ACCOUNT START -->
+    <section
+      class="account z-50 w-full h-full bg-black bg-opacity-50 fixed transition-all duration-200 ease-in-out -translate-x-full"
+    >
+      <div
+        class="container lg:w-[820px] h-full md:h-[580px] mx-auto px-4 py-1 flex flex-col md:flex-row md:mt-3 lg:mt-10 lg:justify-evenly bg bg-white md:rounded-xl md:py-9 relative z-50"
+      >
+        <div
+          onclick="closeAccount()"
+          s
+          class="absolute right-1 top-1 cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="#000000"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+            ></path>
+          </svg>
+        </div>
+        <div
+          class="w-[180px] h-[196px] md:w-[300px] md:h-[360px] lg:w-[380px] lg:h-[396px] md:mt-16 lg:mt-16 mx-auto bg-gray-300 p-4 rounded-xl lg:m-0 hidden md:block"
+        >
+          <img src="img/Enter OTP-amico 2.png" alt="" class="w-full h-full" />
+        </div>
+        <div class="h-full md:w-[295px] mt-10 md:mt-0">
+          <div class="md:flex md:flex-col">
+            <h3 class="text-lg font-bold text-slate-700">New Account</h3>
+            <p class="text-xs text-slate-600">
+              Hi, Ayo bergabung bersama kami menjadi mitra Insania Sinergia
+            </p>
+            <label for="" class="flex flex-col gap-2 mt-4">
+              <span class="text-sm text-black">Nama</span>
+              <input
+                id="nama"
+                type="text"
+                class="rounded-full p-2 border border-black bg-white h-[35px]"
+              />
+              <span class="text-sm text-black mt-2">Alamat Email</span>
+              <input
+                id="email"
+                type="email"
+                class="rounded-full p-2 h-[35px] border border-black bg-white"
+              />
+              <span class="text-sm text-black mt-2">Password</span>
+              <input
+                id="pasword"
+                type="password"
+                class="rounded-full p-2 h-[35px] border border-black bg-white"
+              />
+              <span class="text-sm text-black mt-2">Konfirmasi Password</span>
+              <input
+                id="password"
+                type="password"
+                class="rounded-full p-2 h-[35px] border border-black bg-white"
+              />
+            </label>
+          </div>
+          <div class="flex flex-col mt-4 gap-3">
+            <div
+              class="w-full h-[35px] bg-sky-600 hover:bg-sky-700 rounded-full flex justify-center cursor-pointer"
+            >
+              <button class="text-center text-sm font-semibold text-white">
+                Buat Akun
+              </button>
+            </div>
+            <div
+              class="w-full h-[35px] border border-[#018491] hover:bg-sky-600 text-black hover:text-white rounded-full flex justify-center mt-6 cursor-pointer"
+            >
+              <button class="text-center text-sm font-semibold">
+                Daftar dengan google
+              </button>
+            </div>
+            <p class="text-sm">
+              Sudah Punya akun?
+              <span class="text-sky-500 cursor-pointer">login</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- NEW ACCOUNT END -->
+    <!-- Gallery Section -->
+    <section class="container mx-auto px-6 py-10">
+      <div class="text-gray-600 mb-8 p-6"></div>
+      <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">
+        Our Gallery
+      </h2>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:grid-rows-4"
+      >
+        <img
+          src="./img/Rectangle 102.png"
+          alt="Image 1"
+          class="w-full h-auto shadow-md"
+        />
+        <img
+          src="./img/Rectangle 103.png"
+          alt="Image 2"
+          class="w-full h-auto shadow-md md:row-span-2"
+        />
+        <img
+          src="./img/Rectangle 104.png"
+          alt="Image 3"
+          class="w-full h-auto shadow-md md:row-span-2"
+        />
+        <img
+          src="./img/Rectangle 106.png"
+          alt="Image 5"
+          class="w-full h-auto shadow-md md:row-span-2"
+        />
+        <img
+          src="./img/Rectangle 105.png"
+          alt="Image 4"
+          class="w-full h-auto shadow-md"
+        />
+        <img
+          src="./img/Rectangle 107.png"
+          alt="Image 6"
+          class="w-full h-auto shadow-md md:row-span-2"
+        />
+        <img
+          src="./img/Rectangle 108.png"
+          alt="Image 6"
+          class="w-full h-auto shadow-md"
+        />
+        <img
+          src="./img/Rectangle 109.png"
+          alt="Image 6"
+          class="w-full h-auto shadow-md"
+        />
+      </div>
+    </section>
+    <footer class="bg-[#02546480] mt-20 pb-4">
+      <div class="md:flex justify-evenly text-white ml-5 md:ml-0">
+        <div class="infomation mt-9 md:scale-90">
+          <img src="img/Mask group.png" alt="" />
+          <div class="info">
+            <div class="location flex mb-2 gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 fill-white"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M184,72a56,56,0,1,0-64,55.42V232a8,8,0,0,0,16,0V127.42A56.09,56.09,0,0,0,184,72Zm-56,40a40,40,0,1,1,40-40A40,40,0,0,1,128,112Z"
+                ></path>
+              </svg>
+              <p class="text-sm font-semibold">
+                Jl. Perintis Kemerdekaan <br />
+                No.59, Kota Makassar
+              </p>
+            </div>
+            <div class="number flex gap-2 mb-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 fill-white"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"
+                ></path>
+              </svg>
+              <p class="text-sm font-semibold">
+                +6281-2345-6782 <br />
+                insaniasinergia@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-1 mt-3 md:mt-14">
+          <h2 class="font-bold mb-2">Layanan Insania Sinergi</h2>
+          <ul class="font-semibold text-sm gap-2">
+            <li><a href="">Jasa Pembukuan</a></li>
+            <li><a href="">Jasa Pendampingan</a></li>
+            <li><a href="">Konsultasi Pajak</a></li>
+            <li><a href=""></a>Pembuatan dan Perubahan akta</li>
+            <li><a href=""></a>Kuasa hukum pengadilan pajak</li>
+          </ul>
+        </div>
+        <div class="list-2 mt-3 md:mt-14">
+          <h2 class="font-bold mb-2">Sumber Data</h2>
+          <ul class="font-semibold text-sm gap-2">
+            <li><a href=""></a>FAQ</li>
+            <li><a href=""></a>Studi Kasus</li>
+          </ul>
+        </div>
+        <div class="list-3 mt-3 md:mt-14">
+          <h2 class="font-bold mb-2">Company</h2>
+          <ul class="font-semibold text-sm gap-2">
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Career</a></li>
+            <li><a href=""></a>Youtube</li>
+            <li><a href=""></a>Instagram</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

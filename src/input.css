@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .grid-card-img {
+    @apply w-full h-full  bg-cover absolute group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500 ease-in-out;
+  }
+}
